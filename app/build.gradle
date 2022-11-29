@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.kupriyanov.cryptoapp"
-        minSdk 19
+        minSdk 21
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -45,23 +45,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.7.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    def lifecycle_version = "2.5.1"
-
-    // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    // Lifecycles only (without ViewModel or LiveData)
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    // optional - ReactiveStreams support for LiveData
-    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-
     def room_version = "2.4.3"
 
     implementation "androidx.room:room-runtime:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    kapt 'android.arch.persistence.room:compiler:1.1.1'
 
     implementation 'com.squareup.picasso:picasso:2.8'
 
