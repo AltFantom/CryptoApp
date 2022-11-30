@@ -1,12 +1,12 @@
-package com.kupriyanov.cryptoapp
+package com.kupriyanov.cryptoapp.activities
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import com.kupriyanov.cryptoapp.R
 import com.kupriyanov.cryptoapp.adapters.CoinInfoAdapter
 import com.kupriyanov.cryptoapp.pojo.CoinPriceInfo
+import com.kupriyanov.cryptoapp.viewModels.CoinViewModel
 import kotlinx.android.synthetic.main.activity_coin_price_list.*
 
 class CoinPriceListActivity : AppCompatActivity() {
@@ -19,7 +19,11 @@ class CoinPriceListActivity : AppCompatActivity() {
         val adapter = CoinInfoAdapter(this)
         adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
             override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
-                Log.d("On_CLICK_TEXT", coinPriceInfo.toString())
+                val intent = CoinDetailActivity.newIntent(
+                    this@CoinPriceListActivity,
+                    coinPriceInfo.fromSymbol
+                )
+                startActivity(intent)
             }
         }
         rvCoinPriceList.adapter = adapter

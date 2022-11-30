@@ -1,4 +1,4 @@
-package com.kupriyanov.cryptoapp
+package com.kupriyanov.cryptoapp.viewModels
 
 import android.app.Application
 import android.util.Log
