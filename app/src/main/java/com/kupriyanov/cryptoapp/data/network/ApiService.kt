@@ -1,8 +1,7 @@
 package com.kupriyanov.cryptoapp.data.network
 
-import com.kupriyanov.cryptoapp.data.network.model.CoinNamesListDto
 import com.kupriyanov.cryptoapp.data.network.model.CoinInfoJsonContainerDto
-import io.reactivex.Single
+import com.kupriyanov.cryptoapp.data.network.model.CoinNamesListDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -30,6 +29,7 @@ interface ApiService {
         private const val QUERY_PARAM_FROM_SYMBOLS = "fsyms"
 
         private const val CURRENCY = "USD"
-        private const val MY_KEY = "f99b8ca61179cabb94e2b31314a422b0e7537b2f8bb12b13820a6e4cdacedef0"
+        private const val MY_KEY =
+            "f99b8ca61179cabb94e2b31314a422b0e7537b2f8bb12b13820a6e4cdacedef0"
     }
 }
