@@ -1,4 +1,4 @@
-package com.kupriyanov.cryptoapp.adapters
+package com.kupriyanov.cryptoapp.presentation.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kupriyanov.cryptoapp.R
-import com.kupriyanov.cryptoapp.pojo.CoinPriceInfo
+import com.kupriyanov.cryptoapp.data.network.model.CoinInfoDto
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_coin_info.view.*
 
@@ -14,7 +14,7 @@ class CoinInfoAdapter(private val context: Context) : RecyclerView.Adapter<CoinI
 
     var onCoinClickListener: OnCoinClickListener? = null
 
-    var coinInfoList: List<CoinPriceInfo> = listOf()
+    var coinInfoList: List<CoinInfoDto> = listOf()
         set(value) {
             field = value
             notifyDataSetChanged()
@@ -45,7 +45,7 @@ class CoinInfoAdapter(private val context: Context) : RecyclerView.Adapter<CoinI
     override fun getItemCount() = coinInfoList.size
 
     interface OnCoinClickListener {
-        fun onCoinClick(coinPriceInfo: CoinPriceInfo)
+        fun onCoinClick(coinInfoDto: CoinInfoDto)
     }
 
     inner class CoinInfoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,13 +1,12 @@
-package com.kupriyanov.cryptoapp.activities
+package com.kupriyanov.cryptoapp.presentation.activities
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.kupriyanov.cryptoapp.R
-import com.kupriyanov.cryptoapp.viewModels.CoinViewModel
+import com.kupriyanov.cryptoapp.presentation.viewModels.CoinViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_coin_detail.*
 

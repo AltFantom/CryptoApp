@@ -1,4 +1,4 @@
-package com.kupriyanov.cryptoapp.api
+package com.kupriyanov.cryptoapp.data.network
 
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
