@@ -34,12 +34,12 @@ class CoinDetailFragment : Fragment() {
             with(binding) {
                 tvFromSymbol.text = it.fromSymbol
                 tvToSymbol.text = it.toSymbol
-                tvPriceNow.text = it.price.toString()
+                tvPrice.text = it.price.toString()
                 tvMinPrice.text = it.lowDay.toString()
                 tvMaxPrice.text = it.highDay.toString()
-                tvLastDeal.text = it.lastMarket
+                tvLastMarket.text = it.lastMarket
                 tvLastUpdate.text = it.lastUpdate
-                Picasso.get().load(it.imageUrl).into(ivDetailLogoCoin)
+                Picasso.get().load(it.imageUrl).into(ivLogoCoin)
             }
         }
     }

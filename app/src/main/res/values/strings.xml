@@ -8,4 +8,9 @@
     <string name="max_price_template">Максимум за день:</string>
     <string name="last_deal_template">Последняя сделка:</string>
     <string name="update">Обновлено:</string>
+    <string name="price_label">Цена:</string>
+    <string name="min_price_label">Минимум за день:</string>
+    <string name="max_price_label">Максимум за день:</string>
+    <string name="last_market_label">Последняя сделка:</string>
+    <string name="last_updated_label">Обновлено:</string>
 </resources>
