@@ -11,7 +11,7 @@ import com.kupriyanov.cryptoapp.domain.CoinRepository
 import com.kupriyanov.cryptoapp.domain.entities.CoinInfo
 import com.kupriyanov.cryptoapp.workers.RefreshDataWorker
 
-class CoinRepositotyImpl(private val application: Application) : CoinRepository {
+class CoinRepositoryImpl(private val application: Application) : CoinRepository {
 
     private val coinPriceInfoDao = AppDatabase
         .getInstance(application)
