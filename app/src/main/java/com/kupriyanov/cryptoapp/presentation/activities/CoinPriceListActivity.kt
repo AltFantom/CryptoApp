@@ -6,20 +6,31 @@ import androidx.lifecycle.ViewModelProvider
 import com.kupriyanov.cryptoapp.R
 import com.kupriyanov.cryptoapp.databinding.ActivityCoinPriceListBinding
 import com.kupriyanov.cryptoapp.domain.entities.CoinInfo
+import com.kupriyanov.cryptoapp.presentation.CoinApp
 import com.kupriyanov.cryptoapp.presentation.adapters.CoinInfoAdapter
 import com.kupriyanov.cryptoapp.presentation.viewModels.CoinViewModel
+import com.kupriyanov.cryptoapp.presentation.viewModels.ViewModelFactory
+import javax.inject.Inject
 
 class CoinPriceListActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+
     private val viewModel: CoinViewModel by lazy {
-        ViewModelProvider(this)[CoinViewModel::class.java]
+        ViewModelProvider(this, viewModelFactory)[CoinViewModel::class.java]
     }
 
     private val binding: ActivityCoinPriceListBinding by lazy {
         ActivityCoinPriceListBinding.inflate(layoutInflater)
     }
 
+    private val component by lazy {
+        (application as CoinApp).component
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         val adapter = CoinInfoAdapter(this)
